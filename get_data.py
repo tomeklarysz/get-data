@@ -66,13 +66,13 @@ for i in range(index[0], index[-1]+1):
                 item = df3.iloc[k].item().rstrip()
                 if item == "False":
                     continue
-                for i in range (0, len(list(df2))):
-                    if item == df3.loc["Numer gabloty"].item():
-                        item = "g. "+item
-                    if item == df2.iloc[i]["Uwagi"]:
-                        item = "["+item+"]"
+                if item == df3.loc["Numer gabloty"].item():
+                    item = "g. "+item
+                if item == df3.loc["Uwagi"].item():
+                    item = "["+item+"]"
                 if "coll. ISEZ PAN Kraków" in item:
                     item = item.replace(" coll. ISEZ PAN Kraków", "")
+                    item = item.rstrip()
                     item = item.replace(",", "")
                 if k != len(list(df2))-2:
                     wojewodztwa[current] += str(item)+", "
@@ -84,13 +84,13 @@ for i in range(index[0], index[-1]+1):
                 item = df3.iloc[k].item().rstrip()
                 if item == "False":
                     continue
-                for i in range (0, len(list(df2))):
-                    if item == df3.loc["Numer gabloty"].item():
-                        item = "g. "+item
-                    if item == df2.iloc[i]["Uwagi"]:
-                        item = "["+item+"]"
+                if item == df3.loc["Numer gabloty"].item():
+                    item = "g. "+item
+                if item == df3.loc["Uwagi"].item():
+                    item = "["+item+"]"
                 if "coll. ISEZ PAN Kraków" in item:
                     item = item.replace(" coll. ISEZ PAN Kraków", "")
+                    item = item.rstrip()
                     item = item.replace(",", "")
                 if k != len(list(df2))-2:
                     kraje[current] += str(item)+", "
